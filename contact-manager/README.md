@@ -129,7 +129,7 @@ const ContactList = () => {
           <div className="grid">
             <div className="row">
               <div className="col">
-                <p className="h3">
+                <p className="h3 fw-bold">
                   Contact Manager
                   <Link to={"/contacts/add"} className="btn btn-primary ms-2">
                     {" "}
@@ -144,6 +144,82 @@ const ContactList = () => {
                 </p>
               </div>
             </div>
+            <div className="row">
+              <div className="col-md-6">
+                <form className="row">
+                  <div className="col">
+                    <div className="mb-2">
+                      <input
+                        type="text"
+                        className="form-control"
+                        placeholder="search Names"
+                      />
+                    </div>
+                  </div>
+                  <div className="col">
+                    <div className="mb-2">
+                      <input
+                        type="submit"
+                        className="btn btn-outline-dark"
+                        value="search"
+                      />
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="contact-list">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-6">
+              <div className="card">
+                <div className="card-body">
+                  <div className="row align-items-center d-flex justify-content-around">
+                    <div className="col-md-4">
+                      <img
+                        src="https://w7.pngwing.com/pngs/247/564/png-transparent-computer-icons-user-profile-user-avatar-blue-heroes-electric-blue.png"
+                        alt=""
+                        className="contact-img"
+                      />
+                    </div>
+                    <div className="col-md-7">
+                      <ul className="list-group">
+                        <li className="list-group-item list-group-item-action">
+                          Name: <span className="fw-bold">Faruk</span>
+                        </li>
+                        <li className="list-group-item list-group-item-action">
+                          mobile number:{" "}
+                          <span className="fw-bold">0546856213</span>
+                        </li>
+                        <li className="list-group-item list-group-item-action">
+                          Email: <span className="fw-bold">dgtf@gmail.com</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="col-md-1 d-flex flex-column align-items-center">
+                      <Link
+                        to={"/contacts/view/:contactId"}
+                        className="btn btn-warning my-1"
+                      >
+                        <i className="fa fa-eye"></i>
+                      </Link>
+                      <Link
+                        to={"/contacts/edit/:contactId"}
+                        className="btn btn-primary my-1"
+                      >
+                        <i className="fa fa-pen"></i>
+                      </Link>
+                      <button className="btn btn-danger my-1">
+                        <i className="fa fa-trash"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -152,5 +228,105 @@ const ContactList = () => {
 };
 
 export default ContactList;
+
 ````
 ![](./Foto/3.jpg)
+
+# AddContact.js
+````
+import React from "react";
+import { Link } from "react-router-dom";
+
+const AddContact = () => {
+  return (
+    <>
+      <section className="add-contact p-3">
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              <p className="h4 text-success fw-bold">Create Contact</p>
+              <p className="fst-italic">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque
+                omnis iure dolor dolorem, ullam quaerat optio dolorum aut
+                magnam, dignissimos reprehenderit quos beatae illum cum atque!
+                Error fuga dignissimos tenetur.
+              </p>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-4">
+              <form>
+                <div className="mb-2">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Name"
+                  />
+                </div>
+                <div className="mb-2">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Photo Url"
+                  />
+                </div>
+                <div className="mb-2">
+                  <input
+                    type="number"
+                    className="form-control"
+                    placeholder="Mobile"
+                  />
+                </div>
+                <div className="mb-2">
+                  <input
+                    type="email"
+                    className="form-control"
+                    placeholder="Email"
+                  />
+                </div>
+                <div className="mb-2">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Compony"
+                  />
+                </div>
+                <div className="mb-2">
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Title"
+                  />
+                </div>
+                <div className="mb-2">
+                  <select className="form-control">
+                    <option value="">select a group</option>
+                  </select>
+                </div>
+                <div className="mb-2">
+                  <input
+                    type="submit"
+                    className="btn btn-success"
+                    value="Create"
+                  />
+                  <Link to={"/contacts/list"} className="btn btn-dark ms-2">
+                    Cancel
+                  </Link>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+};
+
+export default AddContact;
+
+````
+![](./Foto/5.jpg)
+
+
+
+   
